@@ -89,6 +89,10 @@ nav.sticky .nav-links li a {
     border-radius: 8px; /* Optional: adds a slight rounding to the edges */
 }
 
+.custom-dropdown{
+    background-color: white;
+}
+
 /* Hero Section */
 .hero {
     position: relative;

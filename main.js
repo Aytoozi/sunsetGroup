@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const languageSwitcher = document.getElementById('language-switcher');
+    const translations = {}; // Will be populated with JSON data
+    const defaultLang = 'hr'; // Default language
+
+    fetch('translations.json')
+        .then(response => response.json())
+        .then(data => {
+            Object.assign(translations, data);
+            setLanguage(defaultLang); // Set default language on load
+        });
+
+    languageSwitcher.addEventListener('change', (event) => {
+        const lang = event.target.value;
+        setLanguage(lang);
+    });
+
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            console.log(key);
+            const translation = translations[lang] && translations[lang][key];
+            console.log(translation);
+            el.textContent = translation || key;
+        });
+    }
+});
+
+
+
+
+
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('nav');
     
@@ -35,11 +67,11 @@ var enlargedIcon = L.icon({
 
 // Array of restaurant data
 var restaurants = [
-    { name: "Sunset Fast Food", lat: 43.507605220646894, lon: 16.464597057670808, address: "Sunset Fast Food 1, Ul. Bruna Bušića 4" },
-    { name: "Sunset Fast Food", lat: 43.502410807347225, lon: 16.4787282, address: "Sunset Fast Food 2, Šetalište Pape Ivana Pavla II 36" },
-    { name: "Belvedere", lat: 43.51339125325193, lon: 16.47190242635596, address: "Belvedere, Velebitska ul. 123" },
-    { name: "Rusulica", lat: 43.50548756254935, lon: 16.47405853960001, address: "Rusulica, Ul. Dinka Šimunovića 14" },
-    { name: "Sinemori", lat: 43.507324182257, lon: 16.433861539611247, address: "Sinemori, Trumbićeva obala 13" }
+    { name: "Sunset Fast Food", lat: 43.507605220646894, lon: 16.464597057670808, address: "Ul. Bruna Bušića 4" },
+    { name: "Sunset Fast Food", lat: 43.50480062496474, lon: 16.45658973260964, address: "Spinčićeva ul. bb" },
+    { name: "Belvedere", lat: 43.51339125325193, lon: 16.47190242635596, address: "Velebitska ul. 123" },
+    { name: "Rusulica", lat: 43.50548756254935, lon: 16.47405853960001, address: "Ul. Dinka Šimunovića 14" },
+    { name: "Sinemori", lat: 43.507324182257, lon: 16.433861539611247, address: "Trumbićeva obala 13" }
 ];
 
 // Loop through restaurants and add markers with custom icons and popups
