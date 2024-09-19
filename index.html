@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunset Company</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav>
+        <div class="logo">
+            <img id="logoImg" src="images/sunsetLogo.png" alt="sunsetLogo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#future">Future</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+            <!-- <li><a href="#team">Team</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <video autoplay muted loop id="background-video">
+            <source src="video/SunsetHero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to Sunset Group</h1>
+            <p>Experience the Best Dining in Split</p>
+            <a href="#menu" class="btn">Explore Our Menus</a>
+        </div>
+    </header>
+    
+
+    <!-- Future Section -->
+    <section id="future" class="section">
+        <div class="container">
+            <h2>The Future of Sunset Company</h2>
+            <p>Expanding our unique offerings to deliver quality food experiences in new locations.</p>
+        </div>
+    </section>
+
+    <!-- Future List Section -->
+    <section id="future-list" class="section">
+        <div class="container">
+            <h2>Upcoming Projects</h2>
+            <div class="projects-list">
+                <div class="project-item">
+                    <div class="pointer"></div>
+                    <p>Eco-friendly packaging, waste reduction programs, and sourcing local ingredients.</p>
+                </div>
+                <div class="project-item">
+                    <div class="pointer"></div>
+                    <p>Expanding fast food & seafood offerings with a new menu.</p>
+                </div>
+                <div class="project-item">
+                    <div class="pointer"></div>
+                    <p>Rewards points, member-only offers, and a mobile app for tracking rewards and making reservations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+<!-- Locations Section -->
+<section id="locations" class="section">
+    <div class="container">
+        <h2>Our Locations</h2>
+        <p>Explore all our restaurants, fast foods, and café bar across Split.</p>
+
+        <!-- Map -->
+        <div id="map" class="map-container"></div>
+
+        <section class="location-list">
+            <!-- Card 1 -->
+            <div class="location-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="brand">
+                            <a href="https://sunset-food.com/" target="_blank"><img class="logoImg" src="images/logos/sunsetLogo.png" alt="Sunset logo"></a>
+                            <h3>Sunset Fast Food 1</h3>
+                            <p class="catchphrase">Fast, Fresh, and Flavor-Packed – Your Hunger Stops Here!</p>
+                        </div>
+                    </div>
+                    <div class="card-back" id="sunsetB">
+                        <a href="https://sunset-food.com/" target="_blank"><img class="logoImgB" src="images/logos/sunsetLogo.png" alt="Sunset logo" ></a>
+                        <div class="hours">
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sat: 07 am - 11 pm</p>
+                            <p>Sun: 08 am - 11 pm</p>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.facebook.com/fastfoodsunset/" target="_blank"><img src="images/icons/fbLogo.png" alt="Sunset Facebook"></a>
+                            <a href="https://www.instagram.com/sunsetfood/" target="_blank"><img src="images/icons/igLogo.png" alt="Sunset Instagram"></a>
+                            <a href="#" target="_blank"><img src="images/icons/tripAdvisor.png" alt="Sunset Trip Advisor"></a>
+                        </div>
+                        <div class="contact">
+                            <h4>Contact</h4>
+                            <div class="phone" id="phoneS">
+                                <img src="images/icons/phone.png" alt="Phone">
+                                <p>+385 99 334 4002,</p>
+                                <p>+385 99 334 4003</p>
+                            </div>
+                            <div class="location" id="locationS">
+                                <img src="images/icons/location.png" alt="Location">
+                                <p>Ul. Bruna Bušića 4, Split, 21000 Croatia</p>
+                                <p>Spinčićeva ul., Split, 21000 Croatia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="location-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="brand">
+                            <a href="https://restaurantsinemori.com/" target="_blank"><img class="logoImg" src="/images/logos/sinemoriLogo.jpg" alt="Sinemori logo"></a>
+                            <h3>Sinemori</h3>
+                            <p class="catchphrase">Local Ingredients, Global Inspiration – Savor Every Bite!</p>
+                        </div>
+                    </div>
+                    <div class="card-back" id="sinemoriB">
+                        <a href="https://restaurantsinemori.com/" target="_blank"><img class="logoImgB" src="/images/logos/sinemoriLogo.jpg" alt="Sinemori logo"></a>
+                        <div class="hours">
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sun: 04 pm - 12 am</p>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.facebook.com/people/Sinemori/100091899464095/" target="_blank"><img src="images/icons/fbLogo.png" alt="Sinemori Facebook"></a>
+                            <a href="https://www.instagram.com/sinemori_restaurant/" target="_blank"><img src="images/icons/igLogo.png" alt="Sinemori Instagram"></a>
+                            <a href="https://www.tripadvisor.com/Restaurant_Review-g295370-d25458058-Reviews-Sinemori-Split_Split_Dalmatia_County_Dalmatia.html" target="_blank"><img src="images/icons/tripAdvisor.png" alt="Sinemori Trip Advisor"></a>
+                        </div>
+                        <div class="contact">
+                            <h4>Contact</h4>
+                            <div class="images/icons/phone">
+                                <img src="/images/icons/phone.png" alt="Phone">
+                                <p>+385 95 201 6666</p>
+                            </div>
+                            <div class="images/icons/email">
+                                <img src="/images/icons/email.png" alt="Email">
+                                <p>info@restaurantsinemori.com</p>
+                            </div>
+                            <div class="images/icons/location">
+                                <img src="/images/icons/location.png" alt="Location">
+                                <p>Trumbiceva obala 13, Split 21000 Croatia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="location-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="brand">
+                            <a href="https://restoranrusulica.com/" target="_blank"><img class="logoImg" src="/images/logos/rusulicaLogo.jpg" alt="Rusulica logo"></a>
+                            <h3>Rusulica</h3>
+                            <p class="catchphrase">Catch of the Day, Every Day – Taste the Ocean’s Best!</p>
+                        </div>
+                    </div>
+                    <div class="card-back" id="rusulicaB">
+                        <a href="https://restoranrusulica.com/" target="_blank"><img class="logoImgB" src="/images/logos/rusulicaLogo.jpg" alt="Rusulica logo"></a>
+                        <div class="hours">
+                            <h4>Working Hours</h4>
+                            <p>Mon - Fri: 10 am - 04 pm</p>
+                            <p>Sat: 07 pm - 12 am</p>
+                            <p>Sun: Closed</p>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.facebook.com/RestaurantRusulica/?locale=hr_HR" target="_blank"><img src="images/icons/fbLogo.png" alt="Rusulica Facebook"></a>
+                            <a href="https://www.instagram.com/rusulica_restoran/?hl=en" target="_blank"><img src="images/icons/igLogo.png" alt="Rusulica Instagram"></a>
+                            <a href="https://www.tripadvisor.com/Restaurants-g295370-Split_Split_Dalmatia_County_Dalmatia.html" target="_blank"><img src="images/icons/tripAdvisor.png" alt="Rusulica Trip Advisor"></a>
+                        </div>
+                        <div class="contact">
+                            <h4>Contact</h4>
+                            <div class="phone">
+                                <img src="images/icons/phone.png" alt="Phone">
+                                <p>+385 91 253 9846</p>
+                            </div>
+                            <div class="email">
+                                <img src="images/icons/email.png" alt="Email">
+                                <p>info.rusulica@gmail.com</p>
+                            </div>
+                            <div class="location">
+                                <img src="images/icons/location.png" alt="Location">
+                                <p>Ul. Dinka Šimunovića 14, Split, 21000 Croatia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="location-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="brand">
+                            <a href="https://g.co/kgs/YKBSkSd" target="_blank"><img class="logoImg" src="/images/logos/logoBelvedere.jpg" alt="Café bar Belvedere"></a>
+                            <h3>Café bar Belvedere</h3>
+                            <p class="catchphrase">The Best Coffee in Town!</p>
+                        </div>
+                    </div>
+                    <div class="card-back" id="belvedereB">
+                        <a href="https://g.co/kgs/YKBSkSd" target="_blank"><img class="logoImgB" src="/images/logos/logoBelvedere.jpg" alt="Café bar Belvedere"></a>
+                        <div class="hours">
+                            <h4>Working Hours</h4>
+                            <p>Mon - Sun: 7 : 30 am - 12 am</p>
+                        </div>
+                        <div class="social">
+                            <a href="https://m.facebook.com/profile.php?id=123502771093695" target="_blank"><img src="images/icons/fbLogo.png" alt="Café bar Belvedere Facebook"></a>
+                            <a href="https://www.instagram.com/caffebarbelveder/" target="_blank"><img src="images/icons/igLogo.png" alt="Café bar BelvedereInstagram"></a>
+                            <a href="#" target="_blank"><img src="/images/icons/tripAdvisor.png" alt="Café bar Belvedere Trip Advisor"></a>
+                        </div>
+                        <div class="contact">
+                            <h4>Contact</h4>
+                            <div class="phone">
+                                <img src="images/icons/phone.png" alt="Phone">
+                                <p>+385 ## ### ####</p>
+                            </div>
+                            <div class="location">
+                                <img src="images/icons/location.png" alt="Location">
+                                <p>Velebitska ul. 123, 21000, Split, Croatia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+            <!-- Repeat for other cards -->
+        </section>
+         
+                <!-- Repeat for other cards as needed -->
+            </section>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Fluid Rectangle -->
+
+
+<!-- Benefits Section -->
+<section id="benefits" class="section">
+    <div class="container">
+        <h2>Why Choose Us?</h2>
+
+        <div class="benefit left">
+            <img src="/images/benefits/set-food-beverage.png" alt="Quality Ingredients">
+            <div class="text">
+                <h3>Quality Ingredients</h3>
+                <p>Fresh and locally sourced ingredients in every meal.</p>
+            </div>
+        </div>
+
+        <div class="benefit right">
+            <img src="/images/benefits/chef-illustration.png" alt="Excellent Service">
+            <div class="text">
+                <h3>Excellent Service</h3>
+                <p>Our staff is dedicated to providing top-notch customer service.</p>
+            </div>
+        </div>
+
+        <div class="benefit left">
+            <img src="/images/benefits/ambience.png" alt="Cozy Ambiance">
+            <div class="text">
+                <h3>Cozy Ambiance</h3>
+                <p>A comfortable and welcoming atmosphere at all locations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="/images/gallery/121573442_3400003456754783_6329529795579007128_n.jpg" alt="Image">
+                <img src="/images/gallery/87559568_2787239118031223_441563105210662912_n.jpg" alt="Image">
+                <img src="/images/gallery/89896994_2830340453721089_1374701877626667008_n.jpg" alt="Image">
+                <img src="/images/gallery/87677839_2787239558031179_6349602117656772608_n.jpg" alt="Image">
+                <img src="/images/gallery/Sinemori_Split_Leta_namjestaj_1.jpg" alt="image">
+                <img src="/images/gallery/87738071_2787238634697938_8297894012921053184_n.jpg" alt="Image">
+                <img src="/images/gallery/380535551_221562930917021_8597714671169448649_n.jpg" alt="Image">
+                <img src="/images/gallery/87781266_2787238401364628_7300349839374548992_n.jpg" alt="Image">
+                <img src="/images/gallery/384339470_226205100452804_1466426948669569034_n.jpg" alt="Image">
+                
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="section cta-section">
+        <div class="container">
+            <h2>Visit Us Today</h2>
+            <a href="#locations" class="cta-btn">Book a Table</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section id="testimonials" class="section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p>"Amazing food and great service!"</p>
+                    <span>- Customer 1</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I love the cozy ambiance at the café."</p>
+                    <span>- Customer 2</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Team Section -->
+    <!-- <section id="team" class="section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-cards">
+                <div class="team-card">
+                    <img src="team1.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Head Chef</p>
+                </div>
+                <div class="team-card">
+                    <img src="team2.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Restaurant Manager</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2>How We Work</h2>
+            <p>At Sunset Company, we pride ourselves on sourcing the finest ingredients, preparing them with care, and serving them in a warm, inviting environment.</p>
+        </div>
+    </section>
+
+    <!-- Contact form-->
+    <div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="/submit-form" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Your message" required></textarea>
+            </div>
+    
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sunset Company. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</body>
+</html>
