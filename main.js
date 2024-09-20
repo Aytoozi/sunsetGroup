@@ -155,4 +155,23 @@ let calcScrollValue = () => {
   };
   
   window.onscroll = calcScrollValue;
-  window.onload = calcScrollValue;
+  window.onload = calcScrollValue; 
+
+
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('mobile-nav');
+  
+  // Function to toggle navigation
+  function toggleNavigation() {
+      navLinks.classList.toggle('active');
+  }
+  // Event listener for the hamburger icon
+  hamburger.addEventListener('click', toggleNavigation);
+  
+  // Optional: Close the menu when a link is clicked
+  navLinks.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A') {
+          navLinks.classList.remove('active');
+      }
+  });
+  

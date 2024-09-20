@@ -17,7 +17,7 @@
             <img id="logoImg" src="images/sunsetLogo.png" alt="sunsetLogo">
         </div>
         <ul class="nav-links">
-            <li><a href="#home" data-translate="home">Home</a></li>
+            <li><a href="#hero" data-translate="home">Home</a></li>
             <li><a href="#future" data-translate="future">Future</a></li>
             <li><a href="#locations" data-translate="locations">Locations</a></li>
             <li><a href="#benefits" data-translate="benefits">Benefits</a></li>
@@ -35,18 +35,38 @@
     </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="hero">
         <video autoplay muted loop id="background-video">
             <source src="video/SunsetHero.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <div class="hamburger" id="hamburger">
+            <div class="line" id="line1"></div>
+            <div class="line" id="line2"></div>
+            <div class="line" id="line3"></div>
+        </div>
+        <div id="mobile-nav">
+            <ul>
+                <li><a href="#hero" data-translate="home">Home</a></li>
+                <li><a href="#future" data-translate="future">Future</a></li>
+                <li><a href="#locations" data-translate="locations">Locations</a></li>
+                <li><a href="#benefits" data-translate="benefits">Benefits</a></li>
+                <li><a href="#gallery" data-translate="gallery">Gallery</a></li>
+                <li><a href="#contact" data-translate="contact">Contact</a></li>
+                <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+                <!-- <li><a href="#team">Team</a></li> -->
+            </ul>
+        </div>
+        <div class="logoHeader">
+            <img id="logoImgHeader" src="images/sunsetLogo.png" alt="sunsetLogo"/>
+        </div>
         <div class="hero-content">
             <h1 data-translate="welcome">Welcome to Sunset Group</h1>
             <p data-translate="experience">Experience the Best Dining in Split</p>
             <a href="#menu" class="btn" data-translate="explore">Explore Our Menus</a>
         </div>
         <section id="section-1">
-            <a id="scroll-btn" href="#section-2"></a>
+            <a id="scroll-btn" href="#future"></a>
         </section>
     </header>
     
@@ -69,15 +89,15 @@
             <h2 data-translate="future-list-heading">Upcoming Projects</h2>
             <div class="projects-list">
                 <div class="project-item">
-                    <div class="pointer"></div>
+                    <div class="pointer">➥</div>
                     <p data-translate="project1">Eco-friendly packaging, waste reduction programs, and sourcing local ingredients.</p>
                 </div>
                 <div class="project-item">
-                    <div class="pointer"></div>
+                    <div class="pointer">➥</div>
                     <p data-translate="project2">Expanding fast food & seafood offerings with a new menu.</p>
                 </div>
                 <div class="project-item">
-                    <div class="pointer"></div>
+                    <div class="pointer">➥</div>
                     <p data-translate="project3">Rewards points, member-only offers, and a mobile app for tracking rewards and making reservations.</p>
                 </div>
             </div>
