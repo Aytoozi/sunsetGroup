@@ -26,18 +26,13 @@
             <!-- <li><a href="#testimonials">Testimonials</a></li> -->
             <!-- <li><a href="#team">Team</a></li> -->
         </ul>
-        <div class="custom-dropdown">
-            <div class="dropdown-selected">Select Language</div>
-            <ul class="dropdown-options">
-                <li data-value="en">English</li>
-                <li data-value="hr">Croatian</li>
-            </ul>
+        <div class="nav-right">
+        <div class="button-box">
+            <div id="btnlang"></div>
+            <button type="button" class="toggle-btn" onclick="setLanguage('en')">ENG</button>
+            <button type="button" class="toggle-btn" onclick="setLanguage('hr')">HRV</button>
         </div>
-          
-          
-          
-          
-
+    </div>
     </nav>
 
     <header class="hero">
@@ -50,9 +45,14 @@
             <p data-translate="experience">Experience the Best Dining in Split</p>
             <a href="#menu" class="btn" data-translate="explore">Explore Our Menus</a>
         </div>
+        <section id="section-1">
+            <a id="scroll-btn" href="#section-2"></a>
+        </section>
     </header>
     
-    
+    <div id="progress">
+        <span id="progress-value">&#x1F815;</span>
+      </div>
 
     <!-- Future Section -->
     <section id="future" class="section">
@@ -450,8 +450,6 @@
             <button type="submit" class="submit-btn" data-translate="contactSubmitButton">Send Message</button>
         </form>
     </div>
-    
-    
 
     <!-- Footer -->
     <footer>

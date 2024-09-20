@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Merriweather:wght@400&display=swap');
 
-
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
@@ -60,6 +59,7 @@ nav.sticky::before {
     padding: 0;
     justify-content: space-around; /* Distribute links evenly */
     box-sizing: border-box;
+
 }
 
 .nav-links li a {
@@ -89,9 +89,48 @@ nav.sticky .nav-links li a {
     border-radius: 8px; /* Optional: adds a slight rounding to the edges */
 }
 
-.custom-dropdown{
-    background-color: white;
+.nav-right {
+    display: flex;
+    max-width:110px;
+    align-items: center;
+    justify-content: flex-end; /* Aligns the content to the right */
+    gap: 1rem; /* Optional: adds spacing between right-side items */
+    flex: 1; /* Ensures it takes the remaining space to push left-side content to the left */
 }
+
+.button-box {
+    width: 104px;
+    margin: 35px auto;
+    position: relative;
+    border-radius: 30px;
+    background: #fff;
+    overflow: hidden; /* Changed to hidden */
+}
+
+.toggle-btn {
+    width: 50px;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    text-align: center;
+}
+
+#btnlang {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 52px;
+    height: 100%;
+    background: radial-gradient(circle, #fceabb, #f8b500, #ff7e5f, #BE3100);
+    border-radius: 30px;
+    transition: left 0.3s ease;
+    z-index: 2;
+}
+
+
 
 /* Hero Section */
 .hero {
@@ -138,6 +177,83 @@ nav.sticky .nav-links li a {
     font-size: 1rem;
 }
 
+
+#progress {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 70px;
+    width: 70px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 9999;
+  }
+  #progress-value {
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: #001a2e;
+  }
+
+
+  #section-1 {
+    height: 100vh;
+    position: relative;
+  }
+  a#scroll-btn {
+    position: absolute;
+    height: 2em;
+    width: 1.25em;
+    border: 0.2em solid #ffffff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom:4.25em;
+    border-radius: 3em;
+  }
+  a#scroll-btn:before {
+    position: absolute;
+    content: "";
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0.3em;
+    height:0.4em;
+    width: 0.4em;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: move-down 2s infinite;
+  }
+  @keyframes move-down {
+    80% {
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(1em);
+      opacity: 0;
+    }
+  }
+  a#scroll-btn:after {
+    position: absolute;
+    content: "SCROLL DOWN";
+    display: block;
+    width: 11em;
+    text-align: center;
+    left: -4.2em;
+    bottom: -3.2em;
+    font-size: 0.8em;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: 600;
+  }
 
 /* Sections */
 .section {
@@ -516,26 +632,6 @@ nav.sticky .nav-links li a {
     object-fit:cover;
 }
 
-/* For medium screens (tablets, etc.) */
-@media (max-width: 900px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
-    }
-}
-
-/* For small screens (mobile) */
-@media (max-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;           /* Switch to 1 column */
-    }
-
-    .gallery-grid > img {
-        width: 90%;                          /* Adjust image size */
-        height: 30vh;                        /* Maintain aspect ratio */
-    }
-}
-
-
 /* .testimonial-card, .team-card {
     background-color: #f4f4f4;
     padding: 1.5rem;
@@ -642,4 +738,27 @@ footer {
 
 .social-links a:hover {
     text-decoration: underline;
+}
+
+/* For medium screens (tablets, etc.) */
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    }
+}
+
+/* For small screens (mobile) */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;           /* Switch to 1 column */
+    }
+
+    .gallery-grid > img {
+        width: 90%;                          /* Adjust image size */
+        height: 30vh;                        /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width:900px){
+
 }

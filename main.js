@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const languageSwitcher = document.getElementById('language-switcher');
     const translations = {}; // Will be populated with JSON data
     const defaultLang = 'hr'; // Default language
 
+    // Fetch translations from JSON file
     fetch('translations.json')
         .then(response => response.json())
         .then(data => {
@@ -10,23 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
             setLanguage(defaultLang); // Set default language on load
         });
 
-    languageSwitcher.addEventListener('change', (event) => {
-        const lang = event.target.value;
-        setLanguage(lang);
-    });
+    // Set the language based on the button clicked
+    window.setLanguage = function(lang) {
+        // Update button position based on language selection
+        const btn = document.getElementById('btnlang');
+        btn.style.left = lang === 'hr' ? '52px' : '0';
 
-    function setLanguage(lang) {
+        // Update translations in the document
         document.querySelectorAll('[data-translate]').forEach(el => {
             const key = el.getAttribute('data-translate');
-            console.log(key);
             const translation = translations[lang] && translations[lang][key];
-            console.log(translation);
             el.textContent = translation || key;
         });
-    }
+    };
 });
-
-
 
 
 
@@ -133,3 +130,29 @@ window.addEventListener('scroll', function () {
     });
 });
 
+
+
+
+
+
+let calcScrollValue = () => {
+    let scrollProgress = document.getElementById("progress");
+    let progressValue = document.getElementById("progress-value");
+    let pos = document.documentElement.scrollTop;
+    let calcHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+    if (pos > 100) {
+      scrollProgress.style.display = "grid";
+    } else {
+      scrollProgress.style.display = "none";
+    }
+    scrollProgress.addEventListener("click", () => {
+      document.documentElement.scrollTop = 0;
+    });
+    scrollProgress.style.background = `conic-gradient(rgb(215,123,17)  ${scrollValue}%, #faca4a ${scrollValue}%)`;
+  };
+  
+  window.onscroll = calcScrollValue;
+  window.onload = calcScrollValue;
