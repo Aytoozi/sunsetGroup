@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Gallery</title>
+		<!-- jQuery (required for Lightbox2) -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- Lightbox2 CSS -->
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+			rel="stylesheet"
+		/>
+
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background: linear-gradient(
+					to bottom,
+					#f9dc92,
+					#f8b500,
+					#ff7e5f,
+					#be3100
+				); /* Sunset gradient */
+				color: #fff;
+				margin: 0;
+				padding: 20px;
+			}
+			#backBtn {
+				position: relative;
+				text-decoration: none;
+				color: white;
+				background-color: #ff7e5f;
+				padding: 10px 20px;
+				border-top-right-radius: 10px;
+				border-bottom-right-radius: 10px;
+				display: inline-block;
+				margin: 1%;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+				transition: background-color 0.3s;
+			}
+			#backBtn:hover {
+				background-color: #feb47b; /* Change color on hover */
+			}
+			#backBtn::before {
+				content: "";
+				position: absolute;
+				left: -15px; /* Adjust arrow position */
+				top: 50%;
+				transform: translateY(-50%);
+				width: 0;
+				height: 0;
+				border-top: 19px solid transparent;
+				border-bottom: 19px solid transparent;
+				border-right: 15px solid #ff7e5f; /* Arrow color */
+				transition: border-right 0.3s;
+			}
+			#backBtn:hover::before {
+				border-right: 15px solid #feb47b;
+			}
+			h1 {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+			.gallery {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.restaurant-section {
+				margin-bottom: 40px;
+				border: 2px solid #fff;
+				border-radius: 8px;
+				padding: 20px;
+				width: 90%;
+				max-width: 800px;
+				background: rgba(255, 255, 255, 0.2);
+			}
+
+			.restaurant-title {
+				text-align: center;
+				margin-bottom: 20px;
+				font-size: 24px;
+				border-bottom: 1px solid #fff;
+				padding-bottom: 10px;
+			}
+
+			.image-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+				gap: 10px;
+			}
+
+			.image-grid img {
+				height: 32vh;
+				width: 100%;
+				border-radius: 5px;
+			}
+
+			.image-grid a img {
+				transition: transform 0.3s ease;
+			}
+
+			.image-grid a:hover img {
+				transform: scale(1.05); /* Slight zoom on hover */
+			}
+			/* Mobile responsiveness */
+			@media (max-width: 1200px) {
+				.image-grid {
+					grid-template-columns: repeat(
+						3,
+						1fr
+					); /* 3 images per row */
+				}
+			}
+
+			@media (max-width: 900px) {
+				.image-grid {
+					grid-template-columns: repeat(
+						2,
+						1fr
+					); /* 2 images per row */
+				}
+			}
+
+			@media (max-width: 600px) {
+				.image-grid {
+					grid-template-columns: 1fr; /* 1 image per row */
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<a
+			href="/index.html"
+			id="backBtn"
+			>Back to Main Page</a
+		>
+
+		<h1>Gallery</h1>
+
+		<div class="gallery">
+			<div class="restaurant-section">
+				<div class="restaurant-title">Café Bar Belvedere</div>
+				<div class="image-grid">
+					<a
+						href="/images/gallery/belvedereImg/268312690_111166718085372_2860659928997387973_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/268312690_111166718085372_2860659928997387973_n.jpg"
+							alt="Café Bar Image 1"
+						/>
+					</a>
+					<a
+						href="/images/gallery/belvedereImg/274990948_134788295723214_4660920023098492954_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/274990948_134788295723214_4660920023098492954_n.jpg"
+							alt="Café Bar Image 2"
+						/>
+					</a>
+					<a
+						href="/images/gallery/belvedereImg/275131033_134788229056554_645085607861468921_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/275131033_134788229056554_645085607861468921_n.jpg"
+							alt="Café Bar Image 3"
+						/>
+					</a>
+					<a
+						href="/images/gallery/belvedereImg/364077005_293127269904858_4342899913430957704_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/364077005_293127269904858_4342899913430957704_n.jpg"
+							alt="Café Bar Image 4"
+						/>
+					</a>
+					<a
+						href="/images/gallery/belvedereImg/409040759_408533478364236_3558805906339561602_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/409040759_408533478364236_3558805906339561602_n.jpg"
+							alt="Café Bar Image 5"
+						/>
+					</a>
+					<a
+						href="/images/gallery/belvedereImg/421037168_17963812301691915_9118670870664398486_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/421037168_17963812301691915_9118670870664398486_n.jpg"
+							alt="Café Bar Image 6"
+						/>
+					</a>
+					<a
+						href="/images/gallery/87781266_2787238401364628_7300349839374548992_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/87781266_2787238401364628_7300349839374548992_n.jpg"
+							alt="Café Bar Image 7"
+						/>
+					</a>
+					<a
+						href="/images/gallery/belvedereImg/427997253_400524822498435_899153553687964516_n.jpg"
+						data-lightbox="cafe-belvedere"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/belvedereImg/427997253_400524822498435_899153553687964516_n.jpg"
+							alt="Café Bar Image 8"
+						/>
+					</a>
+				</div>
+			</div>
+
+			<div class="restaurant-section">
+				<div class="restaurant-title">Fast Food Sunset</div>
+				<div class="image-grid">
+					<a
+						href="/images/gallery/sunsetImg/13064721_1408313509194073_6274732482927463574_o.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/13064721_1408313509194073_6274732482927463574_o.jpg"
+							alt="Fast Food Image 1"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/13173699_1408313175860773_5984228572858364008_n.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/13173699_1408313175860773_5984228572858364008_n.jpg"
+							alt="Fast Food Image 2"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/13178044_1408313315860759_5297751483575270540_n.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/13178044_1408313315860759_5297751483575270540_n.jpg"
+							alt="Fast Food Image 3"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/13235131_1408313855860705_6067355461446252898_o.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/13235131_1408313855860705_6067355461446252898_o.jpg"
+							alt="Fast Food Image 4"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/13256126_1408313235860767_4949458245578323576_n.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/13256126_1408313235860767_4949458245578323576_n.jpg"
+							alt="Fast Food Image 5"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/87277816_4231016690257060_9022314232498094080_n.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/87277816_4231016690257060_9022314232498094080_n.jpg"
+							alt="Fast Food Image 6"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/16487534_1769245996434154_2217722731007366487_o.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/16487534_1769245996434154_2217722731007366487_o.jpg"
+							alt="Fast Food Image 7"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sunsetImg/90615266_4312772245414837_4512913319786446848_n.jpg"
+						data-lightbox="fast-food-sunset"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sunsetImg/90615266_4312772245414837_4512913319786446848_n.jpg"
+							alt="Fast Food Image 8"
+						/>
+					</a>
+				</div>
+			</div>
+
+			<div class="restaurant-section">
+				<div class="restaurant-title">Restaurant Sinemori</div>
+				<div class="image-grid">
+					<a
+						href="/images/gallery/sinemoriImg/5N4A9242-1024x1536.webp"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/5N4A9242-1024x1536.webp"
+							alt="Restaurant Sinemori 1"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/5N4A9234-1024x1536.webp"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/5N4A9234-1024x1536.webp"
+							alt="Restaurant Sinemori 2"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/5N4A9142-1024x1536.webp"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/5N4A9142-1024x1536.webp"
+							alt="Restaurant Sinemori 3"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/5N4A9133-1024x1536.webp"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/5N4A9133-1024x1536.webp"
+							alt="Restaurant Sinemori 4"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/378572101_216337238106257_6676449873913560789_n.jpg"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/378572101_216337238106257_6676449873913560789_n.jpg"
+							alt="Restaurant Sinemori 5"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/368000375_198723843200930_8618217437664535372_n.jpg"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/368000375_198723843200930_8618217437664535372_n.jpg"
+							alt="Restaurant Sinemori 6"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/382758279_224859443920703_1149969394471388094_n.jpg"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/382758279_224859443920703_1149969394471388094_n.jpg"
+							alt="Restaurant Sinemori 7"
+						/>
+					</a>
+					<a
+						href="/images/gallery/sinemoriImg/5N4A8966-1-1024x1536.webp"
+						data-lightbox="restaurant-sinemori"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/sinemoriImg/5N4A8966-1-1024x1536.webp"
+							alt="Restaurant Sinemori 8"
+						/>
+					</a>
+				</div>
+			</div>
+
+			<div class="restaurant-section">
+				<div class="restaurant-title">Restaurant Rusulica</div>
+				<div class="image-grid">
+					<a
+						href="/images/gallery/rusulicaImg/profilnaa-scaled.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/profilnaa-scaled.webp"
+							alt="Restaurant Rusulica Image 1"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/A_033-scaled.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/A_033-scaled.webp"
+							alt="Restaurant Rusulica Image 2"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/A_033-1024x683.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/A_033-1024x683.webp"
+							alt="Restaurant Rusulica Image 3"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/A_031-1024x683.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/A_031-1024x683.webp"
+							alt="Restaurant Rusulica Image 4"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/5N4A6942-scaled.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/5N4A6942-scaled.webp"
+							alt="Restaurant Rusulica Image 5"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/5N4A6940-scaled.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/5N4A6940-scaled.webp"
+							alt="Restaurant Rusulica Image 6"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/5N4A6924-scaled.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/5N4A6924-scaled.webp"
+							alt="Restaurant Rusulica Image 7"
+						/>
+					</a>
+					<a
+						href="/images/gallery/rusulicaImg/5N4A6272-scaled.webp"
+						data-lightbox="restaurant-rusulica"
+					>
+						<img
+							class="galerija_slike"
+							src="/images/gallery/rusulicaImg/5N4A6272-scaled.webp"
+							alt="Restaurant Rusulica Image 8"
+						/>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+	</body>
+</html>

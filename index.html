@@ -25,7 +25,7 @@
 			<div class="logo">
 				<img
 					id="logoImg"
-					src="images/sunsetLogo.png"
+					src="images/logos/SSLogo-removebg.png"
 					alt="sunsetLogo"
 				/>
 			</div>
@@ -180,17 +180,18 @@
 			<div class="logoHeader">
 				<img
 					id="logoImgHeader"
-					src="images/sunsetLogo.png"
+					src="images/logos/SSGraphics.jpg"
 					alt="sunsetLogo"
 				/>
 			</div>
+
 			<div class="hero-content">
 				<h1 data-translate="welcome">Welcome to Sunset Group</h1>
 				<p data-translate="experience">
 					Experience the Best Dining in Split
 				</p>
 				<a
-					href="#menu"
+					href="#locations"
 					class="btn"
 					data-translate="explore"
 					>Explore Our Menus</a
@@ -322,10 +323,10 @@
 										Working Hours
 									</h4>
 									<p data-translate="card1-hours">
-										Mon - Sat: 07 am - 11 pm
+										Mon - Fri: 08:00 am - 12:00 pm
 									</p>
 									<p data-translate="card1-hours-sunday">
-										Sun: 08 am - 11 pm
+										Sat & Sun: 08:00 am - 01:00 am
 									</p>
 								</div>
 								<div class="social">
@@ -389,7 +390,8 @@
 											Croatia
 										</p>
 										<p data-translate="card1-location2">
-											Spinčićeva ul., Split, 21000 Croatia
+											Spinčićeva ul. bb, Split, 21000
+											Croatia
 										</p>
 									</div>
 								</div>
@@ -524,7 +526,7 @@
 									>
 										<img
 											class="logoImg"
-											src="images/logos/rusulicaLogo.jpg"
+											src="images/logos/logoRusulica.webp"
 											alt="Rusulica logo"
 										/>
 									</a>
@@ -548,7 +550,8 @@
 								>
 									<img
 										class="logoImgB"
-										src="images/logos/rusulicaLogo.jpg"
+										id="rusulicaLogoB"
+										src="images/logos/logoRusulica.webp"
 										alt="Rusulica logo"
 									/>
 								</a>
@@ -557,13 +560,13 @@
 										Working Hours
 									</h4>
 									<p data-translate="monFriHours">
-										Mon - Fri: 10 am - 04 pm
+										Mon - Fri: 08:00 am - 12:00 pm
 									</p>
 									<p data-translate="satHours">
-										Sat: 07 pm - 12 am
+										Sat: 08:00 am - 01:00 am
 									</p>
 									<p data-translate="sunClosed">
-										Sun: Closed
+										Sat: 08:00 am - 01:00 am
 									</p>
 								</div>
 								<div class="social">
@@ -675,7 +678,7 @@
 										Working Hours
 									</h4>
 									<p data-translate="belvedereHours">
-										Mon - Sun: 7 : 30 am - 12 am
+										Mon - Sun: 7:00 am - 12:00 am
 									</p>
 								</div>
 								<div class="social">
@@ -802,42 +805,40 @@
 				<h2 data-translate="galleryTitle">Gallery</h2>
 				<div class="gallery-grid">
 					<img
-						src="images/gallery/121573442_3400003456754783_6329529795579007128_n.jpg"
+						src="images/gallery/belvedereImg/268312690_111166718085372_2860659928997387973_n.jpg"
 						alt="Image"
 					/>
 					<img
-						src="images/gallery/87559568_2787239118031223_441563105210662912_n.jpg"
+						src="images/gallery/rusulicaImg/51-scaled.webp"
 						alt="Image"
 					/>
 					<img
-						src="images/gallery/89896994_2830340453721089_1374701877626667008_n.jpg"
+						src="images/gallery/sinemoriImg/5N4A9022-1024x1536.webp"
 						alt="Image"
 					/>
 					<img
-						src="images/gallery/87677839_2787239558031179_6349602117656772608_n.jpg"
+						src="images/gallery/rusulicaImg/5N4A6756-scaled.webp"
 						alt="Image"
 					/>
 					<img
-						src="images/gallery/Sinemori_Split_Leta_namjestaj_1.jpg"
+						src="images/gallery/sinemoriImg/368000375_198723843200930_8618217437664535372_n.jpg"
 						alt="image"
 					/>
 					<img
-						src="images/gallery/87738071_2787238634697938_8297894012921053184_n.jpg"
-						alt="Image"
-					/>
-					<img
-						src="images/gallery/380535551_221562930917021_8597714671169448649_n.jpg"
-						alt="Image"
-					/>
-					<img
-						src="images/gallery/87781266_2787238401364628_7300349839374548992_n.jpg"
-						alt="Image"
-					/>
-					<img
-						src="images/gallery/384339470_226205100452804_1466426948669569034_n.jpg"
+						src="images/gallery/sinemoriImg/378572101_216337238106257_6676449873913560789_n.jpg"
 						alt="Image"
 					/>
 				</div>
+				<button
+					class="galleryBtn"
+					id="galleryBtn"
+				>
+					<a
+						href="/gallery.html"
+						data-translate="more-pictures"
+						>See More Pictures</a
+					>
+				</button>
 			</div>
 		</section>
 
@@ -909,7 +910,10 @@
 		</section>
 
 		<!-- Contact form-->
-		<div class="contact-form-container">
+		<div
+			class="contact-form-container"
+			id="contact"
+		>
 			<h2 data-translate="contactUsTitle">Contact Us</h2>
 			<form
 				class="contact-form"
