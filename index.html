@@ -46,23 +46,20 @@
 
         <header class="hero" id="hero">
             <video autoplay muted loop id="background-video">
-                <source src="video/SunsetHero.mp4" type="video/mp4" />
+                <source src="video/SunsetHero_V3.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-
-            </div>
             <div class="hamburger" id="hamburger">
                 <div class="line" id="line1"></div>
                 <div class="line" id="line2"></div>
                 <div class="line" id="line3"></div>
             </div>
             <div id="mobile-nav">
-            <div class="nav-right"></div>
-                <div class="button-box">
+                <!-- <div class="button-box">
                     <div id="btnlang"></div>
                     <button type="button" class="toggle-btn" onclick="setLanguage('en')">ENG</button>
                     <button type="button" class="toggle-btn" onclick="setLanguage('hr')">HRV</button>
-                </div>
+                </div> -->
                 <ul>
                     <li>
                         <a href="#hero" data-translate="home">Home</a>
@@ -153,7 +150,7 @@
                                     <a href="https://sunset-food.com/" target="_blank">
                                         <img class="logoImg" src="images/logos/sunsetLogo.png" alt="Sunset logo" />
                                     </a>
-                                    <h3 data-translate="card1-name">Sunset Fast Food 1</h3>
+                                    <h3 data-translate="card1-name">Sunset Fast Food</h3>
                                     <p class="catchphrase" data-translate="card1-catchphrase">
                                         Fast, Fresh, and Flavor-Packed – Your Hunger Stops Here!
                                     </p>
@@ -181,15 +178,31 @@
                                 </div>
                                 <div class="contact">
                                     <h4 data-translate="card1-contact-heading">Contact</h4>
-                                    <div class="phone" id="phoneS">
-                                        <img src="images/icons/phone.png" alt="Phone" />
-                                        <p data-translate="card1-phone">+385 99 334 4002,</p>
-                                        <p data-translate="card1-phone-alt">+385 99 334 4003</p>
+                                    <h3>Sunset 1</h3>
+                                    <div id="sunset1">
+                                        <div class="phone" id="phoneS1">
+                                            <img src="images/icons/phone.png" alt="Phone" />
+                                            <p data-translate="card1-phone">+385 99 334 4002,</p>
+                                        </div>
+                                        <div class="location" id="locationS1">
+                                            <img src="images/icons/location.png" alt="Location" />
+                                            <p data-translate="card1-location1">
+                                                Ul. Bruna Bušića 4, Split, 21000 Croatia
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div class="location" id="locationS">
-                                        <img src="images/icons/location.png" alt="Location" />
-                                        <p data-translate="card1-location1">Ul. Bruna Bušića 4, Split, 21000 Croatia</p>
-                                        <p data-translate="card1-location2">Spinčićeva ul. bb, Split, 21000 Croatia</p>
+                                    <h3>Sunset 2</h3>
+                                    <div id="sunset2">
+                                        <div class="phone" id="phoneS2">
+                                            <img src="images/icons/phone.png" alt="Phone" />
+                                            <p data-translate="card1-phone-alt">+385 99 334 4003</p>
+                                        </div>
+                                        <div class="location" id="locationS2">
+                                            <img src="images/icons/location.png" alt="Location" />
+                                            <p data-translate="card1-location2">
+                                                Spinčićeva ul. bb, Split, 21000 Croatia
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -474,11 +487,6 @@
         <footer>
             <div class="container">
                 <p data-translate="footerCopyright">&copy; 2024 Sunset Company. All Rights Reserved.</p>
-                <div class="social-links">
-                    <a href="#" data-translate="footerFacebook">Facebook</a>
-                    <a href="#" data-translate="footerInstagram">Instagram</a>
-                    <a href="#" data-translate="footerTwitter">Twitter</a>
-                </div>
             </div>
         </footer>
 

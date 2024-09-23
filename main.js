@@ -176,16 +176,42 @@ window.onload = calcScrollValue;
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('mobile-nav');
 
-// Function to toggle navigation
+// Function to toggle navigation and change the hamburger to an "X"
 function toggleNavigation() {
-    navLinks.classList.toggle('active');
+    navLinks.classList.toggle('active'); // Toggle the mobile navigation menu
+    hamburger.classList.toggle('active'); // Toggle the "X" class for the hamburger
+
+    // Toggle the logo, section-1, and progress button visibility based on navLinks state
+    const logoHeader = document.querySelector('.logoHeader');
+    const section1 = document.getElementById('section-1');
+    const progressBtn = document.getElementById('progress'); // Progress button
+
+    if (navLinks.classList.contains('active')) {
+        logoHeader.style.display = 'none'; // Hide logo when nav is active
+        section1.style.display = 'none'; // Hide section-1 when nav is active
+        progressBtn.style.visibility = 'hidden'; // Hide progress button when nav is active
+    } else {
+        logoHeader.style.display = 'block'; // Show logo when nav is inactive
+        section1.style.display = 'block'; // Show section-1 when nav is inactive
+        progressBtn.style.visibility = 'visible'; // Show progress button when nav is inactive
+    }
 }
+
 // Event listener for the hamburger icon
 hamburger.addEventListener('click', toggleNavigation);
 
-// Optional: Close the menu when a link is clicked
+// Close the menu and reset the hamburger when a link is clicked
 navLinks.addEventListener('click', event => {
     if (event.target.tagName === 'A') {
-        navLinks.classList.remove('active');
+        navLinks.classList.remove('active'); // Close the menu
+        hamburger.classList.remove('active'); // Reset the hamburger to its original state
+
+        // Show the logo, section-1, and progress button when a link is clicked
+        const logoHeader = document.querySelector('.logoHeader');
+        const section1 = document.getElementById('section-1');
+        const progressBtn = document.getElementById('progress');
+        logoHeader.style.display = 'block';
+        section1.style.display = 'block';
+        progressBtn.style.visibility = 'visible';
     }
 });
