@@ -25,6 +25,24 @@ html {
     font-style: normal;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    scrollbar-width: 8px;
+}
+/* WebKit browsers */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #e4322b, #ff9b00); /* Sunset gradient */
+    border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #e4322b, #ff9b00); /* Hover effect with the same gradient */
 }
 
 /* Nav Bar */
@@ -296,100 +314,8 @@ a#scroll-btn:after {
     font-style: normal;
 }
 
-/* Sections */
-.section {
-    padding: 5rem 2rem;
-    text-align: center;
-}
-
-#future {
-    font-size: 1.3rem;
-}
-
-/* General Section Style */
-/* Upcoming Projects Section */
-#future-list {
-    font-size: 1.3rem;
-    position: relative; /* This makes sure the pseudo-element is positioned relative to this element */
-    z-index: 1; /* Ensure the content stays above the background */
-    padding: 3rem 0;
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    background-color: white; /* Light background for contrast */
-}
-
-.container {
-    margin: 0 auto;
-}
-
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-    position: relative;
-}
-
-.project-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.pointer {
-    display: flex;
-    align-self: baseline;
-    width: 14px;
-    height: 14px;
-    position: relative;
-    top: -3px; /* Adjust vertical position if needed */
-}
-
-.project-item p {
-    font-size: 1.1rem;
-    color: #333;
-    margin: 0;
-    line-height: 1.4; /* Adjust line-height for better text alignment */
-    text-align: left; /* Ensure text is aligned to the left */
-}
-
-#future-list::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%; /* Start at the middle to center it */
-    width: 150%; /* Slightly larger than the container width */
-    height: 100%;
-    background: linear-gradient(160deg, #fceabb, #f8b500, #ff7e5f, #be3100); /* Sunset gradient */
-    transform: translateX(-50%) rotate(10deg); /* Center and rotate */
-    border-radius: 50% 0% 50% 0%; /* Fluid shape */
-    z-index: -1; /* Send behind content */
-    overflow: hidden;
-    pointer-events: none; /* Makes sure the background doesn't interfere with any clickable elements */
-}
-
-/* Map Section */
-.map-container {
-    height: 400px;
-    width: 100%;
-    margin: 2rem 0;
-    background-color: #e5e5e5;
-}
-
-#map {
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    width: 100%;
-    height: 40vh;
-    z-index: 0;
-    /* opacity: 0.6; Reduce opacity for background effect
-    filter: brightness(50%); Darken the map */
-}
-
 #locations {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 /* Location List */
 .location-list {
@@ -452,37 +378,15 @@ a#scroll-btn:after {
     text-align: center;
 }
 #sunsetB {
-    height:40vh;
+    height: 40vh;
     background-color: #e4322b;
     overflow-y: scroll;
     padding-top: 10em;
     scrollbar-width: thin; /* "auto" or "thin" */
-    scrollbar-color: #e4322b #f1f1f1;
+    /* scrollbar-color: #e4322b #f1f1f1; */
+    max-height: 400px; /* Set a max height to demonstrate scrolling */
+    scrollbar-width: thin; /* Firefox scrollbar width for this element */
 }
-/* WebKit browsers */
-::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Track color */
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #e4322b, #ff9b00); /* Sunset gradient */
-    border-radius: 10px; /* Rounded corners */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #e4322b, #ff9b00); /* Hover effect with the same gradient */
-}
-
-/* Firefox */
-html {
-    scrollbar-width: thin; /* "auto" or "thin" */
-    scrollbar-color: #e4322b #f1f1f1; /* Handle color and track color */
-}
-
 #rusulicaB {
     background-color: #d6b469;
 }
@@ -563,6 +467,123 @@ html {
     flex-direction: column;
 }
 
+#mapDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100vw;
+    font-size: 1.3rem;
+}
+#mapDiv > p,
+#mapDiv > h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+/* Map Section */
+.map-container {
+    height: 400px;
+    width: 100%;
+    margin: 2rem 0;
+    background-color: #e5e5e5;
+}
+
+#map {
+    display: block;
+    width: 100%;
+    height: 40vh;
+    z-index: 0;
+}
+
+/* Sections */
+.section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+#future {
+    display: block;
+    font-size: 1.3rem;
+    width: 50%;
+    margin: auto;
+}
+
+/* General Section Style */
+/* Upcoming Projects Section */
+#future-list {
+    font-size: 1.3rem;
+    position: relative; /* This makes sure the pseudo-element is positioned relative to this element */
+    z-index: 1; /* Ensure the content stays above the background */
+    padding: 3rem 0;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    background-color: white; /* Light background for contrast */
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    position: relative;
+}
+
+.project-item {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    gap: 1rem;
+    width: 60%;
+}
+#project-item2 {
+    padding-left: 5rem;
+}
+#project-item3 {
+    padding-left: 10rem;
+}
+
+.pointer {
+    display: flex;
+    align-self: baseline;
+    width: 14px;
+    height: 14px;
+    font-size: 2rem;
+    position: relative;
+    padding-right: 10px;
+    top: -10px; /* Adjust vertical position if needed */
+}
+
+.project-item p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.4; /* Adjust line-height for better text alignment */
+    text-align: left; /* Ensure text is aligned to the left */
+}
+
+#future-list::before {
+    content: '';
+    position: absolute;
+    top: 3.5rem;
+    left: 50%; /* Start at the middle to center it */
+    width: 150%; /* Slightly larger than the container width */
+    height: 100%;
+    background: linear-gradient(160deg, #fceabb, #f8b500, #ff7e5f, #be3100); /* Sunset gradient */
+    transform: translateX(-50%) rotate(10deg); /* Center and rotate */
+    border-radius: 50% 0% 50% 0%; /* Fluid shape */
+    z-index: -1; /* Send behind content */
+    overflow: hidden;
+    pointer-events: none; /* Makes sure the background doesn't interfere with any clickable elements */
+}
+
 .logoImg {
     width: 50%;
     height: 50%;
@@ -610,7 +631,7 @@ html {
     position: relative;
     padding: 3rem 0;
     text-align: center;
-    margin: 0 15%;
+    margin: 10rem 15% 0;
     background-color: white;
     overflow: hidden;
     z-index: 1; /* Ensure the content stays above the background */
