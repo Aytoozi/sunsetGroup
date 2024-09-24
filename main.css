@@ -1019,4 +1019,19 @@ footer {
         transition: left 0.3s ease;
         z-index: 2;
     }
+    #project-item2 {
+        padding-left: 0;
+    }
+    #project-item3 {
+        padding-left: 0;
+    }
+    #future {
+        width: 100%;
+    }
+    #future-list {
+        width: 100%;
+    }
+    .project-item {
+        width: 90%;
+    }
 }
