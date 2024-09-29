@@ -148,6 +148,7 @@ nav.sticky .nav-links li a {
 #logoImg {
     height: 100%;
     border-radius: 8px;
+    transition: opacity 0.1s ease;
     /* Optional: adds a slight rounding to the edges */
 }
 

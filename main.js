@@ -138,6 +138,22 @@ window.addEventListener('scroll', function () {
 });
 
 window.addEventListener('scroll', function () {
+    const logo = document.getElementById('logoImg');
+
+    logo.style.opacity = 0;
+
+    // Wait for the fade out transition to complete before changing the logo source
+
+    if (window.scrollY === 0) {
+        logo.src = 'images/logos/sunset group jhg-17.png'; // Default logo when scroll is at the top
+    } else {
+        logo.src = 'images/logos/sunset group-14.png'; // Different logo when scrolling
+    }
+
+    // Fade the logo back in after changing the source
+    logo.style.opacity = 1;
+    // Matches the 0.3s transition time
+
     const benefitCards = document.querySelectorAll('.benefit');
     benefitCards.forEach(card => {
         const cardPosition = card.getBoundingClientRect().top;
